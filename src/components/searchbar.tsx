@@ -1,22 +1,21 @@
 "use client";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
+import style from "./searchbar.module.css";
 
 export default function Searchbar() {
   const router = useRouter();
   const [search, setSearch] = useState("");
   const searchParams = useSearchParams();
-
+  const q = searchParams.get("q");
   useEffect(() => {
-    const q = searchParams.get("q") || "";
-    setSearch(q);
-  }, [searchParams]);
+    setSearch(q || "");
+  }, [q]);
 
   const onChangeSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearch(e.target.value);
   };
   const onSubmit = () => {
-    const q = searchParams.get("q") || "";
     if (!search || q === search) return;
     router.push(`/search?q=${search}`);
   };
@@ -26,7 +25,7 @@ export default function Searchbar() {
     }
   };
   return (
-    <div>
+    <div className={style.container}>
       <input
         value={search}
         onChange={onChangeSearch}
