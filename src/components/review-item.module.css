@@ -1,0 +1,31 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 25px 0px;
+  border-bottom: 1px solid rgba(243, 243, 243, 0.11);
+}
+
+.top_container {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.author {
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: -2px;
+}
+.date {
+  font-size: 14px;
+  color: gray;
+}
+.content {
+  padding: 20px 0px;
+}
+.delete_btn {
+  cursor: pointer;
+  text-decoration: underline;
+  color: gray;
+}
