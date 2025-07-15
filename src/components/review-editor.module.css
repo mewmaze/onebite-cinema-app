@@ -29,6 +29,10 @@
   cursor: pointer;
   font-weight: 800;
 }
+.form_container button:disabled {
+  background-color: rgb(220, 220, 220);
+  color: black;
+}
 .form_container .submit_container {
   display: flex;
   justify-content: flex-end;
